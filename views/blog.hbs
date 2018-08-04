@@ -1,0 +1,68 @@
+
+
+
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header" >
+    {{> includes/nav-blog}}
+    <main class="mdl-layout__content">
+
+        <div class="mdl-grid portfolio-max-width">
+            {{#if posts}}
+                {{#each posts}}
+                    <div class="mdl-grid mdl-cell mdl-cell--12-col mdl-cell--4-col-tablet mdl-card mdl-shadow--4dp">
+                        <div class="mdl-card__media mdl-cell mdl-cell--12-col-tablet">
+                            <img class="article-image" src=" images/example-blog01.jpg" border="0" alt="">
+                        </div>
+                        <div class="mdl-cell mdl-cell--8-col">
+                            <h2 class="mdl-card__title-text">New Post</h2>
+                            <div class="mdl-card__supporting-text padding-top">
+                                <span>Posted now</span>
+                                <div id="tt1" class=" icon material-icons portfolio-share-btn" tabindex="1">share</div>
+                                <div class="mdl-tooltip" for="tt1">
+                                    Share via social media
+                                </div>
+                            </div>
+                            <div class="mdl-card__supporting-text no-left-padding">
+                                <span>Category: <a href="/blog/blog-main"></a></span>
+                                <p>{{this.body}}</p>
+                            </div>
+                        </div>
+                    </div>
+                {{/each}}
+            {{/if}}
+                <div class="mdl-grid mdl-cell mdl-cell--12-col mdl-cell--4-col-tablet mdl-card mdl-shadow--4dp">
+                    <div class="mdl-card__media mdl-cell mdl-cell--12-col-tablet">
+                        <img class="article-image" src=" images/example-blog01.jpg" border="0" alt="">
+                    </div>
+                    <div class="mdl-cell mdl-cell--8-col">
+                        <h2 class="mdl-card__title-text">New Post</h2>
+                        <div class="mdl-card__supporting-text padding-top">
+                            <span>Posted now</span>
+                            <div id="tt1" class=" icon material-icons portfolio-share-btn">share</div>
+                            <div class="mdl-tooltip" for="tt1">
+                                Share via social media
+                            </div>
+                        </div>
+                        <form action="/blog/add-post" method="post">
+                            <div class="mdl-card__supporting-text no-left-padding">
+                                <textarea name="body"></textarea>
+                                <span>Category: <a href="/blog/blog-main">Latest</a></span>
+                            </div>
+                            <input type="submit" value="Add Post" />
+                        </form>
+                    </div>
+                </div>
+
+        </div>
+        <footer class="mdl-mini-footer">
+            <div class="mdl-mini-footer__left-section">
+                <div class="mdl-logo">Alexandru Petru</div>
+            </div>
+            <div class="mdl-mini-footer__right-section">
+                <ul class="mdl-mini-footer__link-list">
+                    <li><a href="epk.ro">Twitter</a></li>
+                    <li><a href="epk.ro">LinkedIn</a></li>
+                </ul>
+            </div>
+        </footer>
+    </main>
+</div>

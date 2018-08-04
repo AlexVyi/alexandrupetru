@@ -1,0 +1,59 @@
+
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+       {{> includes/nav-contact}}
+        <main class="mdl-layout__content">
+            <div class="mdl-grid portfolio-max-width portfolio-contact">
+                <div class="mdl-cell mdl-cell--12-col mdl-card mdl-shadow--4dp">
+                    <div class="mdl-card__title">
+                        <h2 class="mdl-card__title-text">Contact</h2>
+                    </div>
+                    <div class="mdl-card__media">
+                        <img class="article-image" src=" /images/contact.jpg" border="0" alt="">
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        <p>
+                            Va rog sa ma contactati.Nu se stie niciodata pe unde sunt,insa cu siguranta ca am un laptop si conexiune la net.Deci si sfantul email.
+                        </p>
+                        <p>
+                            Puteti de asemenea sa-mi dati de lucru, si sa-mi cumparati si o cafea pentru asta.Iubesc ceea ce fac,deci nu o sa va refuz.Mai ales cafeaua.
+                            Sau,pur si simplu,sa ma salutati doar..:)
+                        </p>
+                        <form action="/contact/send-contact-form" method="post">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                <input class="mdl-textfield__input" pattern="[A-Z,a-z, ]*" type="text" id="Name" name="name">
+                                <label class="mdl-textfield__label" for="Name">Nume si prenume</label>
+                                <span class="mdl-textfield__error">Va rog sa introduceti doar litere si spatii</span>
+                            </div>
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                <input class="mdl-textfield__input" type="text" id="Email" name="email">
+                                <label class="mdl-textfield__label" for="Email">Email</label>
+                            </div>
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                <textarea class="mdl-textfield__input" type="text" rows="5" id="note" name="message"></textarea>
+                                <label class="mdl-textfield__label" for="note">Introduceti textul</label>
+                            </div>
+                            <p>
+                                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit">
+                                    Submit
+                                </button>
+                                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="reset">
+                                   Reset
+                                </button>
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <footer class="mdl-mini-footer">
+                <div class="mdl-mini-footer__left-section">
+                    <div class="mdl-logo">Alexandru Petru</div>
+                </div>
+                <div class="mdl-mini-footer__right-section">
+                    <ul class="mdl-mini-footer__link-list">
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </footer>
+        </main>
+    </div>
