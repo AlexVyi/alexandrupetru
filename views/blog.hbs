@@ -9,32 +9,52 @@
             {{#if posts}}
                 {{#each posts}}
                     <div class="mdl-grid mdl-cell mdl-cell--12-col mdl-cell--4-col-tablet mdl-card mdl-shadow--4dp">
-                        <div class="mdl-card__media mdl-cell mdl-cell--12-col-tablet">
-                            <img class="article-image" src=" images/example-blog01.jpg" border="0" alt="">
-                        </div>
-                        <div class="mdl-cell mdl-cell--8-col">
-                            <h2 class="mdl-card__title-text">New Post</h2>
+                        {{# equal category "tech"}}{{!--BLOG CATEGORIES--}}
+                            <div class="mdl-card__media mdl-cell mdl-cell--12-col-tablet">
+                                <img class="article-image" src="images/cofee&mac.jpg" border="0" alt="">
+                            </div>
+                            <div class="mdl-cell mdl-cell--8-col">
+                            <h2 class="mdl-card__title-text">{{this.title}}</h2>
                             <div class="mdl-card__supporting-text padding-top">
-                                <span>Posted now</span>
+                                <span>{{this.category}}</span>
                                 <div id="tt1" class=" icon material-icons portfolio-share-btn" tabindex="1">share</div>
                                 <div class="mdl-tooltip" for="tt1">
                                     Share via social media
                                 </div>
                             </div>
                             <div class="mdl-card__supporting-text no-left-padding">
-                                <span>Category: <a href="/blog/blog-main"></a></span>
-                                <p>{{this.body}}</p>
+                                <span>Category: <a href="/blog/blog-tech-category">{{this.category}}</a></span>
+                                <p>{{post}}</p>
                             </div>
                         </div>
+                        {{else equal category "miscellaneous"}}
+                            <div class="mdl-card__media mdl-cell mdl-cell--12-col-tablet">
+                                <img class="article-image" src="images/miscellaneous.jpg" border="0" alt="">
+                            </div>
+                            <div class="mdl-cell mdl-cell--8-col">
+                                <h2 class="mdl-card__title-text">{{this.title}}</h2>
+                                <div class="mdl-card__supporting-text padding-top">
+                                    <span>{{this.category}}</span>
+                                    <div id="tt1" class=" icon material-icons portfolio-share-btn" tabindex="1">share</div>
+                                    <div class="mdl-tooltip" for="tt1">
+                                        Share via social media
+                                    </div>
+                                </div>
+                                <div class="mdl-card__supporting-text no-left-padding">
+                                    <span>Category: <a href="/blog/blog-miscellaneous-category">{{this.category}}</a></span>
+                                    <p>{{post}}</p>
+                                </div>
+                            </div>
+                        {{/equal}}{{!--END BLOG CATEGORIES--}}
                     </div>
                 {{/each}}
             {{/if}}
                 <div class="mdl-grid mdl-cell mdl-cell--12-col mdl-cell--4-col-tablet mdl-card mdl-shadow--4dp">
                     <div class="mdl-card__media mdl-cell mdl-cell--12-col-tablet">
-                        <img class="article-image" src=" images/example-blog01.jpg" border="0" alt="">
+                        <img class="article-image" src="" border="0" alt="">
                     </div>
                     <div class="mdl-cell mdl-cell--8-col">
-                        <h2 class="mdl-card__title-text">New Post</h2>
+                        <h2 class="mdl-card__title-text">Make new post</h2>
                         <div class="mdl-card__supporting-text padding-top">
                             <span>Posted now</span>
                             <div id="tt1" class=" icon material-icons portfolio-share-btn">share</div>
@@ -44,7 +64,9 @@
                         </div>
                         <form action="/blog/add-post" method="post">
                             <div class="mdl-card__supporting-text no-left-padding">
-                                <textarea name="body"></textarea>
+                                <input type="text" name="title" placeholder="title">
+                                <input type="text" name="category" placeholder="category">
+                                <textarea title="" name="post"></textarea>
                                 <span>Category: <a href="/blog/blog-main">Latest</a></span>
                             </div>
                             <input type="submit" value="Add Post" />

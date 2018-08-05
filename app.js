@@ -7,6 +7,11 @@ const indexRouter = require('./routes/index');
 const portfolioRouter = require('./routes/portfolio');
 const blogPosts = require('./routes/blog');
 const contactRouter = require('./routes/contact')
+const hbsHelpers = expressHbs.create({//extra helpers to be inserted if needed.
+  helpers: require("./helpersHbs/handlebars.js").helpers,
+  defaultLayout: 'layout',
+  extname: '.hbs'
+});
 
 const app = express();
 
@@ -15,6 +20,7 @@ app.set('views', path.join(__dirname, 'views'));
 // view engine setup
 app.engine('.hbs',expressHbs({defaultLayout:'layout', extname:'.hbs'}));
 app.set('view engine', '.hbs');
+app.engine('.hbs', hbsHelpers.engine);
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));

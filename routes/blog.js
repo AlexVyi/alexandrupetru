@@ -10,12 +10,19 @@ mongoose.connect('mongodb://alex%40vps1:iepurelefugeadevulpe@94.130.109.19:2657/
   console.log('connected to BLOG')
 });
 /* GET posts  */
-router.get('/blog-main', function(req, res, next) {
+router.get('/blog-tech-category', function(req, res, next) {
   res.send('hello blog');//THIS ROUTE REDIRECTS FROM THE MAIN BLOG VIEW TO THE MAIN SUB_ARTICLES
+});
+router.get('/blog-miscellaneous-category', function(req, res, next) {
+  res.send('hello miscellaneous blog');//THIS ROUTE REDIRECTS FROM THE MAIN BLOG VIEW TO THE MAIN SUB_ARTICLES
 });
 
 router.post('/add-post', function (req,res,next) {
-  var postData = new Post(req.body);
+  var postData = new Post({
+    title:req.body.title,
+    post:req.body.post,
+    category:req.body.category
+  });
   postData.save().then(function (result) {
     res.redirect('/blog');
   }).catch(function (err) {

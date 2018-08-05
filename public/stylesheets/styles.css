@@ -1,6 +1,7 @@
 .portfolio-header {
   position: relative;
-  background-image: url(/images/header-bg.jpg);
+  //background-image: url();
+  background-size: cover;
 }
 
 .portfolio-header .mdl-layout__header-row {
@@ -29,8 +30,9 @@
 }
 
 .portfolio-logo {
-  background: url(images/logo.png) 50% no-repeat;
+  background: url(/images/orange.png) 50% no-repeat;
   background-size: cover;
+  color:white;
   height: 150px;
   width: 150px;
   margin: auto auto 10px;
@@ -87,7 +89,7 @@
 }
 
 .portfolio-blog-card-full-bg {
-  background: url(images/example-blog03.jpg) center / cover;
+  background: url(/images/cofee&mac.jpg) center / cover;
 }
 
 .portfolio-blog-card-event-bg {
